@@ -1,0 +1,18 @@
+opam-version: "2.0"
+name: "opam-sanity-basic"
+version: "0.1.0"
+synopsis: "Mend detection sanity probe — minimal opam project"
+maintainer: "mend-detection-qa"
+authors: ["mend-detection-qa"]
+license: "MIT"
+homepage: "https://github.com/mend-detection-qa/opam-sanity-basic"
+bug-reports: "https://github.com/mend-detection-qa/opam-sanity-basic/issues"
+depends: [
+  "ocaml" {>= "4.14"}
+  "dune" {>= "3.23.0"}
+  "cmdliner" {>= "2.1.1"}
+  "fmt" {>= "0.11.0"}
+]
+build: [
+  ["echo" "no build step"]
+]

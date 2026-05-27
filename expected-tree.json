@@ -1,0 +1,98 @@
+{
+  "probe_id": "opam-sanity-basic",
+  "pattern": "basic-registry",
+  "pm": "opam",
+  "generated_at": "2026-05-27T10:50:52Z",
+  "pm_version_tested": null,
+  "ocaml_constraint": ">= 4.14",
+  "mend_dependency_type": "OPAM",
+  "notes": [
+    "Mend's opam resolver reads from the installed opam switch — no lockfile parsing.",
+    "Dependency type reported by UA: OPAM.",
+    "build-only deps (ocamlfind, ocamlbuild, topkg) are pulled in by fmt at build time.",
+    "base-threads and base-unix are virtual packages (version='base') installed with the compiler.",
+    "ocaml.runPreStep must be true OR packages must be pre-installed in the active switch for Mend to resolve them.",
+    "If runPreStep is false and packages are not installed, Mend returns an empty tree — known UA behavior."
+  ],
+  "direct_dependencies": [
+    {
+      "artifactId": "dune",
+      "version": "3.23.0",
+      "dependency_type": "OPAM",
+      "dependency_class": "depends",
+      "source": "opam-repository",
+      "transitive_dependencies": [
+        {
+          "artifactId": "base-threads",
+          "version": "base",
+          "dependency_type": "OPAM",
+          "dependency_class": "depends",
+          "source": "opam-repository"
+        },
+        {
+          "artifactId": "base-unix",
+          "version": "base",
+          "dependency_type": "OPAM",
+          "dependency_class": "depends",
+          "source": "opam-repository"
+        }
+      ]
+    },
+    {
+      "artifactId": "cmdliner",
+      "version": "2.1.1",
+      "dependency_type": "OPAM",
+      "dependency_class": "depends",
+      "source": "opam-repository",
+      "transitive_dependencies": []
+    },
+    {
+      "artifactId": "fmt",
+      "version": "0.11.0",
+      "dependency_type": "OPAM",
+      "dependency_class": "depends",
+      "source": "opam-repository",
+      "transitive_dependencies": [
+        {
+          "artifactId": "ocamlfind",
+          "version": "1.9.8",
+          "dependency_type": "OPAM",
+          "dependency_class": "depends",
+          "filter": "build",
+          "source": "opam-repository"
+        },
+        {
+          "artifactId": "ocamlbuild",
+          "version": "0.16.1",
+          "dependency_type": "OPAM",
+          "dependency_class": "depends",
+          "filter": "build",
+          "source": "opam-repository"
+        },
+        {
+          "artifactId": "topkg",
+          "version": "1.1.1",
+          "dependency_type": "OPAM",
+          "dependency_class": "depends",
+          "filter": "build",
+          "source": "opam-repository"
+        }
+      ]
+    }
+  ],
+  "compiler_dep": {
+    "artifactId": "ocaml",
+    "version": "4.14.2",
+    "dependency_type": "OPAM",
+    "dependency_class": "depends",
+    "note": "Compiler — appears as a regular opam dependency. Exact version depends on installed switch; 4.14.2 is the expected minimum-satisfying stable release."
+  },
+  "summary": {
+    "expected_direct_dependencies_number": 3,
+    "expected_transitive_dependencies_number": 5,
+    "expected_total_dependencies_number": 8,
+    "expected_package_managers": ["ocaml"],
+    "direct_dependency_names": ["dune", "cmdliner", "fmt"],
+    "transitive_dependency_names": ["base-threads", "base-unix", "ocamlfind", "ocamlbuild", "topkg"]
+  }
+}
